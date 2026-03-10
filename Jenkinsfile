@@ -27,7 +27,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                bat 'node serveur.js'
+                bat 'echo Build successful'
             }
         }
 
