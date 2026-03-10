@@ -7,27 +7,27 @@ pipeline {
 
     stages {
 
-        stage('Clone Repository') {
+        stage('Checkout') {
             steps {
-                git 'https://github.com/fatimazahra2000/tpJenki.git'
+                git branch: 'main', url: 'https://github.com/fatimazahra2000/tpJenki.git'
             }
         }
 
-        stage('Install Dependencies') {
+        stage('Install') {
             steps {
-                sh 'npm install'
+                bat 'npm install'
             }
         }
 
-        stage('Run Tests') {
+        stage('Test') {
             steps {
-                sh 'npm test'
+                bat 'npm test'
             }
         }
 
         stage('Build') {
             steps {
-                sh 'npm start'
+                bat 'node serveur.js'
             }
         }
 
